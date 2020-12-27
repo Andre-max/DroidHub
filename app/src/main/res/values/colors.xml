@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent_purple">#33757ED2</color>
+    <color name="light_purple">#B280EF</color>
+    <color name="dark_purple">#7940CA</color>
+    <color name="default_purple">#757ED2</color>
+
+    <color name="opacity_black">#80000000</color>
+
+    <color name="light_black">#575555</color>
+    <color name="dark_black">#332F2F</color>
+</resources>

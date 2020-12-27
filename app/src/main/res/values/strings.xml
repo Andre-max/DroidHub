@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DroidHub</string>
+
+    <string name="invalid_email">Enter valid email</string>
+    <string name="invalid_password">Wrong password. Try again.</string>
+    <string name="must_not_be_empty_format">%s must not be empty.</string>
+    <string name="go_to_upload_page_plain_text">Go to upload page</string>
+</resources>

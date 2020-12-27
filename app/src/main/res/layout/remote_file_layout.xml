@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/remote_file_preview_image"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/remote_file_image_background"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_document" />
+
+    <TextView
+        android:id="@+id/remote_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:fontFamily="@font/cabin"
+        android:text="Eiffel Tower.jpeg"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@+id/remote_file_preview_image"
+        app:layout_constraintTop_toTopOf="@+id/remote_file_preview_image" />
+
+    <TextView
+        android:id="@+id/size_and_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.56 MB, 16 Aug"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="@+id/remote_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/remote_file_name" />
+
+    <TextView
+        android:id="@+id/bottom_divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/default_purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/remote_file_name"
+        app:layout_constraintTop_toBottomOf="@+id/remote_file_preview_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>

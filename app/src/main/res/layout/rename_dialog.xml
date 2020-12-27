@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:fontFamily="@font/advent_pro_semibold"
+        android:id="@+id/rename_plain_text"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_width="wrap_content"
+        android:text="Rename"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:background="@drawable/base_folder_background"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Enter name here"
+        android:id="@+id/new_display_name_input"
+        android:inputType="textPersonName"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="0dp"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rename_plain_text"
+        app:layout_constraintTop_toBottomOf="@+id/rename_plain_text" />
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_width="wrap_content"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@android:string/cancel"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/new_display_name_input"
+        app:layout_constraintTop_toBottomOf="@+id/new_display_name_input" />
+
+    <Button
+        android:id="@+id/proceed_btn"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:text="Proceed"
+        android:textSize="@dimen/_12ssp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/cancel_btn"
+        app:layout_constraintEnd_toEndOf="@+id/new_display_name_input"
+        app:layout_constraintTop_toTopOf="@+id/cancel_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

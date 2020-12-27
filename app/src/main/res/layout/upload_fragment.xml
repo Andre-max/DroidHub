@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <import type="com.andre_max.droidhub.utils.Status"/>
+
+        <variable
+            name="viewModel"
+            type="com.andre_max.droidhub.ui.upload.UploadViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.upload.UploadFragment">
+
+
+        <TextView
+            android:id="@+id/add_file_plain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a file"
+            android:textSize="@dimen/_16ssp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_20sdp" />
+
+        <EditText
+            android:id="@+id/file_name_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:hint="File name goes here"
+            android:inputType="textPersonName"
+            android:padding="@dimen/_10sdp"
+            android:text="@={viewModel.fileNameInput}"
+            android:textColorHint="@color/opacity_black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/add_file_plain_text"
+            app:layout_constraintTop_toBottomOf="@+id/add_file_plain_text" />
+
+        <Button
+            android:id="@+id/choose_file_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:onClick="@{() -> viewModel.startFilePickerIntent()}"
+            android:padding="@dimen/_10sdp"
+            android:text="Choose file"
+            app:layout_constraintEnd_toEndOf="@+id/file_name_input"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/file_name_input"
+            app:layout_constraintTop_toBottomOf="@+id/file_selected_text" />
+
+        <ProgressBar
+            android:id="@+id/upload_progress_bar"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:visibility="@{viewModel.status == Status.Loading ? View.VISIBLE : View.GONE}"
+            android:indeterminateTint="@color/default_purple"
+            app:layout_constraintBottom_toTopOf="@+id/upload_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choose_file_btn"
+            app:layout_constraintVertical_bias="0.7"
+            tools:targetApi="lollipop" />
+
+        <Button
+            android:id="@+id/upload_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:text="Upload"
+            android:onClick="@{() -> viewModel.uploadFileToFirebaseStorage(context)}"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/choose_file_btn"
+            app:layout_constraintStart_toStartOf="@+id/choose_file_btn" />
+
+        <TextView
+            android:id="@+id/file_selected_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cabin"
+            android:maxLines="1"
+            android:textColor="#5A5959"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/file_name_input"
+            app:layout_constraintStart_toStartOf="@+id/choose_file_btn"
+            app:layout_constraintTop_toBottomOf="@+id/file_name_input"
+            tools:text="File selected:  img_2421113.jpeg"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
